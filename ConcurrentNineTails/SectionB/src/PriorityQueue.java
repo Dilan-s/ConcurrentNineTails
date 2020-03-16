@@ -52,7 +52,18 @@ public class PriorityQueue<T extends Comparable<T>> implements
 	 * @throws PQException if the priority queue is full
 	 */
 	public void add(T newEntry) throws PQException {
-	    // TODO: Implement this method for Question 2
+		if (size == max_size){
+			throw new PQException("Queue is full");
+		}
+		items[size] = newEntry;
+		size++;
+		int i = size - 1;
+		while (i > 0 && items[i].compareTo(items[(i - 1) / 2]) < 0) {
+			T itemsI = items[i];
+			items[i] = items[(i - 1) / 2];
+			items[(i - 1) / 2] = itemsI;
+			i--;
+		}
 	}
 
 	/**

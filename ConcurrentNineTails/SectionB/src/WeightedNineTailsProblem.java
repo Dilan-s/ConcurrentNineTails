@@ -5,6 +5,7 @@ public class WeightedNineTailsProblem {
 	public static void main(String[] args) {
 		
 		NineTailsWeightedGraph graph = new NineTailsWeightedGraph();
+
 		
 		while (true){
 			//Prompt the user to enter the nine coin's Heads and Tails
