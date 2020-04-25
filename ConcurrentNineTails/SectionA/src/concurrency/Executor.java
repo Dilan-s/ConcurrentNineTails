@@ -23,7 +23,6 @@ public class Executor {
   public String execute() {
     List<Integer> history = new LinkedList<Integer>();
     boolean deadlockOccurred = false;
-
     while (!program.isTerminated() && !deadlockOccurred) {
       try {
         int thread = scheduler.chooseThread(program);

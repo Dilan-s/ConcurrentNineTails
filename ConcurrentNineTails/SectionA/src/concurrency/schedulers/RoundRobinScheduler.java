@@ -16,7 +16,7 @@ public class RoundRobinScheduler extends AbstractSchedule implements Scheduler {
 
   @Override
   public int chooseThread(ConcurrentProgram program) throws DeadlockException {
-    Set<Integer> enabledVals = program.getEnabledThreadIds();
+  Set<Integer> enabledVals = program.getEnabledThreadIds();
     if (enabledVals.isEmpty()){
       throw new DeadlockException();
     }
